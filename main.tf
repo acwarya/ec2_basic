@@ -1,4 +1,4 @@
-terraform {
+pterraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -14,7 +14,7 @@ provider "aws" {
 resource "aws_instance" "example" {
   ami                    = "ami-020cba7c55df1f615" # Replace with a valid AMI for your region
   instance_type          = "t2.micro"
-  key_name               = "new_achettri" # Replace with your key pair name
+  key_name               = "keypair" # Replace with your key pair name
   vpc_security_group_ids = ["${aws_security_group.allow_ssh.id}"]
   user_data              = file("user_data.sh") # Reference the user data script
 
